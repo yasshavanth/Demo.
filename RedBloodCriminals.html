@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RED BLOOD CRIMINALS</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('bg.jpg');
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: red;
+    }
+    .login, .main {
+      display: none;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .login.active, .main.active {
+      display: block;
+    }
+    input[type=password] {
+      padding: 10px;
+      width: 80%;
+      font-size: 18px;
+      background: darkred;
+      color: white;
+      border: none;
+    }
+    .button {
+      background: darkred;
+      color: white;
+      padding: 12px 20px;
+      font-size: 20px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    .app-icon {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      font-size: 20px;
+    }
+    .app-icon a {
+      color: red;
+      text-decoration: none;
+    }
+    .search-box {
+      margin: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login active" id="loginPage">
+    <h1>RED BLOOD CRIMINALS</h1>
+    <p>Enter Password</p>
+    <input type="password" id="passwordInput"><br>
+    <div class="button" onclick="checkPassword()">Login</div>
+    <p id="error" style="color:white;"></p>
+  </div>
+
+  <div class="main" id="mainPage">
+    <h1>AVOID PEOPLE 💀</h1>
+    <div class="apps">
+      <div class="app-icon">
+        <a href="https://t.me/RedBloodCriminalBot">ANONY</a>
+        <div class="search-box">
+          <input type="text" placeholder="Search files by name (offline)" />
+        </div>
+      </div>
+      <div class="app-icon">ROYZO</div>
+      <div class="app-icon">LOVELY</div>
+      <div class="app-icon">BANKY</div>
+      <div class="app-icon">CRIMINAL</div>
+      <div class="app-icon">EXETRA</div>
+      <div class="app-icon">APP7</div>
+      <div class="app-icon">APP8</div>
+      <div class="app-icon">APP9</div>
+      <div class="app-icon">APP10</div>
+    </div>
+  </div>
+
+  <script>
+    let attempts = 0;
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const error = document.getElementById("error");
+      if (input === "HACKER2006") {
+        document.getElementById("loginPage").classList.remove("active");
+        document.getElementById("mainPage").classList.add("active");
+      } else {
+        attempts++;
+        error.innerText = "WRONG PASSWORD!";
+        if (attempts >= 3) {
+          error.innerText = "DANGER I KILL YOU";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
